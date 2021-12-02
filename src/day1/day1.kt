@@ -1,27 +1,17 @@
 package day1
 
-import java.io.File
-
-fun readFile(fileName: String): List<String> {
-    val lineList = mutableListOf<String>()
-
-    File(fileName).useLines { lines -> lines.forEach { lineList.add(it) } }
-
-    return lineList
-}
-
-fun calculateIncreases(linesFromFile: List<String>): Int {
+fun calculateIncreases(linesFromFile: List<Int>): Int {
     var countOfIncreases = 0
 
     for (i in linesFromFile.indices) {
-        if (i > 0 && linesFromFile[i - 1].toInt() < linesFromFile[i].toInt()) {
+        if (i > 0 && linesFromFile[i - 1] < linesFromFile[i]) {
             countOfIncreases++
         }
     }
     return countOfIncreases
 }
 
-fun calculateSlidingWindowIncreases(linesFromFile: List<String>): Int {
+fun calculateSlidingWindowIncreases(linesFromFile: List<Int>): Int {
     var countOfIncreases = 0
 
     var sumFromFirstSlidingWindow = 0
@@ -30,9 +20,9 @@ fun calculateSlidingWindowIncreases(linesFromFile: List<String>): Int {
     for (i in linesFromFile.indices) {
         if (i < linesFromFile.size - 3) {
             sumFromFirstSlidingWindow =
-                linesFromFile[i].toInt() + linesFromFile[i + 1].toInt() + linesFromFile[i + 2].toInt()
+                linesFromFile[i] + linesFromFile[i + 1] + linesFromFile[i + 2]
             sumFromSecondSlidingWindow =
-                linesFromFile[i + 1].toInt() + linesFromFile[i + 2].toInt() + linesFromFile[i + 3].toInt()
+                linesFromFile[i + 1] + linesFromFile[i + 2] + linesFromFile[i + 3]
 
             if (sumFromFirstSlidingWindow < sumFromSecondSlidingWindow) {
                 countOfIncreases++
@@ -43,13 +33,13 @@ fun calculateSlidingWindowIncreases(linesFromFile: List<String>): Int {
 }
 
 fun main(args: Array<String>) {
-    val linesFromFileFirstStar = readFile("src/day1/day1_first_star.txt")
+    val linesFromFileFirstStar = file.readFileForInteger("src/day1/day1_first_star.txt")
 
     val countOfIncreasesFirstStar = calculateIncreases(linesFromFileFirstStar)
 
     println("Result for first star $countOfIncreasesFirstStar")
 
-    val linesFromFileSecondStar = readFile("src/day1/day1_second_star.txt")
+    val linesFromFileSecondStar = file.readFileForInteger("src/day1/day1_second_star.txt")
 
     val countOfIncreasesSecondStar = calculateSlidingWindowIncreases(linesFromFileSecondStar)
 
