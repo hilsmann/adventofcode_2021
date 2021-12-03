@@ -10,6 +10,14 @@ fun readFileForInteger(fileName: String): List<Int> {
     return lineList
 }
 
+fun readFileForString(fileName: String): List<String> {
+    val lineList = mutableListOf<String>()
+
+    File(fileName).useLines { lines -> lines.forEach { lineList.add(it) } }
+
+    return lineList
+}
+
 fun readFileForMapStringInt(fileName: String): List<Map<String, Int>> {
     val lineList = mutableListOf<Map<String, Int>>()
 
