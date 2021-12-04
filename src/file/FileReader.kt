@@ -1,5 +1,7 @@
 package file
 
+import day4.BingoBoard
+import day4.BingoSubsystem
 import java.io.File
 
 fun readFileForInteger(fileName: String): List<Int> {
@@ -16,6 +18,31 @@ fun readFileForString(fileName: String): List<String> {
     File(fileName).useLines { lines -> lines.forEach { lineList.add(it) } }
 
     return lineList
+}
+
+fun readFileForBingoBoards(fileName: String): BingoSubsystem {
+    var isFirstLine = true
+    var bingoBoard = BingoBoard()
+    val bingoSubsystem = BingoSubsystem()
+
+    File(fileName).useLines { lines
+        ->
+        lines.forEach { line ->
+            if (isFirstLine) {
+                bingoSubsystem.bingoNumbers = line.split(',').map { number -> number.toInt() }
+                isFirstLine = false
+            } else if (line.isNotBlank()) {
+                bingoBoard.board.add(
+                    line.trim().replace("\\s+".toRegex(), " ").split(' ').map { number -> number.toInt() }.toMutableList())
+                if (bingoBoard.board.isNotEmpty() && bingoBoard.board.size == 5) {
+                    bingoSubsystem.bingoBoards.add(bingoBoard)
+                    bingoBoard = BingoBoard()
+                }
+            }
+        }
+    }
+
+    return bingoSubsystem
 }
 
 fun readFileForMapStringInt(fileName: String): List<Map<String, Int>> {
