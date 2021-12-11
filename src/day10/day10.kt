@@ -118,5 +118,5 @@ fun main(args: Array<String>) {
 
     val autocompletionScoreSecondStar = calculateAutocompletionScoreSecondStar(linesFromFileSecondStar)
 
-    println("Result for second star $autocompletionScoreSecondStar") // 3049320156 TooLow
+    println("Result for second star $autocompletionScoreSecondStar") // 3049320156
 }

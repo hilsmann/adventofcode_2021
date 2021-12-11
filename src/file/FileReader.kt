@@ -13,6 +13,22 @@ fun readFileForInteger(fileName: String): List<Int> {
     return lineList
 }
 
+fun readFileForIntegerInLine(fileName: String): MutableList<MutableList<Int>> {
+    val lineList = mutableListOf<MutableList<Int>>()
+
+    File(fileName).useLines { lines ->
+        lines.forEach { it ->
+            val splitLine = it.trim().split("").toMutableList()
+            splitLine.removeFirst()
+            splitLine.removeLast()
+
+            lineList.add(splitLine.map { number -> number.toInt() }.toMutableList())
+        }
+    }
+
+    return lineList
+}
+
 fun readFileForString(fileName: String): List<String> {
     val lineList = mutableListOf<String>()
 
