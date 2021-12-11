@@ -107,7 +107,7 @@ private fun mapOpenChunkSymbolToCloseChunkSymbol(symbol: Char): Char {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForString("src/day10/day10_first_star.txt")
 
     val syntaxErrorScoreFirstStar = calculateSyntaxErrorScoreFirstStar(linesFromFileFirstStar)

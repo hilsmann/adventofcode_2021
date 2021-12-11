@@ -145,7 +145,7 @@ private fun incrementAllOctopusEnergyByOne(dumboOctopusesEnergy: List<MutableLis
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForIntegerInLine("src/day11/day11_first_star.txt")
 
     val amountOfFlashesFirstStar = calculateAmountOfFlashesFirstStar(linesFromFileFirstStar.toMutableList(), 100)
@@ -157,5 +157,5 @@ fun main(args: Array<String>) {
     val stepWhenAllDumboOctopusesFlashesAtSameTimeSecondStar =
         calculateStepWhenAllDumboOctopusesFlashesAtSameTimeSecondStar(linesFromFileSecondStar.toMutableList())
 
-    println("Result for second star $stepWhenAllDumboOctopusesFlashesAtSameTimeSecondStar") // 320 TooLow
+    println("Result for second star $stepWhenAllDumboOctopusesFlashesAtSameTimeSecondStar") // 320
 }

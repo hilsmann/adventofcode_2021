@@ -32,7 +32,7 @@ fun calculateSlidingWindowIncreases(linesFromFile: List<Int>): Int {
     return countOfIncreases
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForInteger("src/day1/day1_first_star.txt")
 
     val countOfIncreasesFirstStar = calculateIncreases(linesFromFileFirstStar)

@@ -95,7 +95,7 @@ fun calculateLastWinningBingoBoardScore(bingoSubsystem: BingoSubsystem): Int {
     return winning.sumOf { outerList -> outerList.sumOf { innerList -> innerList } } * lastBingoNumber // 4495
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForBingoBoards("src/day4/day4_first_star.txt")
 
     val winningBingoBoardNumberFirstStar = calculateFirstWinningBingoBoardScore(linesFromFileFirstStar)

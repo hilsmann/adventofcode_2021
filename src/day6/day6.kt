@@ -60,7 +60,7 @@ fun arraySolution(currentPopulationOfLanternFish: MutableList<Int>, days: Int): 
     return currentPopulationOfLanternFish.size
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForIntCommaSeperated("src/day6/day6_first_star.txt")
 
     val currentPopulationOfLanternFishFirstStar =

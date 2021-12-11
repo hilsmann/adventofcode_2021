@@ -37,7 +37,7 @@ fun calculateDepthAndHorizontalPositionForSecondStar(linesFromFile: List<Map<Str
     return depth * horizontalPosition
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForMapStringInt("src/day2/day2_first_star.txt")
 
     val depthMultipyHorizontalPosition = calculateDepthAndHorizontalPositionForFirstStar(linesFromFileFirstStar)

@@ -87,7 +87,7 @@ fun calculateLifeSupportRating(linesFromFile: List<String>): Int {
     return Integer.parseInt(co2ScrubberRating, 2) * Integer.parseInt(oxygenGeneratorRating, 2)
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForString("src/day3/day3_first_star.txt")
 
     val powerConsumption = calculatePowerConsumption(linesFromFileFirstStar)

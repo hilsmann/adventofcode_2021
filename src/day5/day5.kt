@@ -40,7 +40,7 @@ fun calculateOverLappingVentClouds(mapOfCoordinates: Map<Coordinates, Coordinate
     return 1
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForCoordinates("src/day5/day5_test_first_star.txt")
 
     val winningBingoBoardNumberFirstStar = calculateOverLappingVentClouds(linesFromFileFirstStar)

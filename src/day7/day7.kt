@@ -38,7 +38,7 @@ private fun gaussianEmpiricalFormula(number: Int): Int {
     return (((number * number) + number) / 2)
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val linesFromFileFirstStar = file.readFileForIntCommaSeperated("src/day7/day7_first_star.txt")
 
     val fuelUseOfBestPositionFirstStar = calculateBestCrabPositionFirstStar(linesFromFileFirstStar)
